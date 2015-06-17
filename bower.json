@@ -1,0 +1,21 @@
+{
+  "name": "Importador",
+  "version": "0.0.1",
+  "authors": [
+    "André Abadesso <andre.abadesso@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jszip": "Stuk/jszip#~2.5.0",
+    "lodash": "~3.9.3"
+  }
+}

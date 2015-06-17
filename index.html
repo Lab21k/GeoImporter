@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+            table {
+                border-spacing: 5px;
+            }
+
+            tr {
+                background: #cecece;
+            }
+        </style>
+    </head>
+    <body>
+        Upload KML/KMZ:
+        <form name="kmlForm" id="kmlForm">
+            <input type="file" onchange="change(this)" id="kml"/>
+        </form>
+
+        <table class="table">
+            <tr class="thead">
+            </tr>
+        </table>
+
+        <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="app/bower_components/jszip/dist/jszip.min.js"></script>
+        <script src="app/bower_components/lodash/lodash.min.js"></script>
+        <script src="js/togeojson.js"></script>
+
+        <script src="lib/index.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
