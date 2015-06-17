@@ -16,6 +16,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "jszip": "Stuk/jszip#~2.5.0",
-    "lodash": "~3.9.3"
+    "lodash": "~3.9.3",
+    "mocha": "~2.2.5",
+    "chai": "~3.0.0"
   }
 }
