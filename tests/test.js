@@ -128,4 +128,55 @@ describe('KML Parsing', function() {
         expect(geometry).to.have.length.above(0);
     });
 
+    it('Should return 0 results when parser receives 0 results of the type of geometry specified (Array)', function() {
+
+        var parsed = KMLParser.loadKML(kmlString[1], ['MultiPolygon']);
+        var index = parsed.head.indexOf('geojson');
+
+        var geometry = _.chain(parsed.body)
+                            .map(function(geo) {
+                                return JSON.parse(geo[index]);
+                            })
+                            .filter(function(point) {
+                                return ['MultiPolygon'].indexOf(point.type) > -1;
+                            })
+                            .value();
+
+        expect(geometry).to.have.length.below(1);
+    });
+
+    it('Should return 0 results when parser receives 0 results of the type of geometry specified (String)', function() {
+
+        var parsed = KMLParser.loadKML(kmlString[1], 'MultiPolygon');
+        var index = parsed.head.indexOf('geojson');
+
+        var geometry = _.chain(parsed.body)
+                            .map(function(geo) {
+                                return JSON.parse(geo[index]);
+                            })
+                            .filter(function(point) {
+                                return 'MultiPolygon' === point.type;
+                            })
+                            .value();
+
+        expect(geometry).to.have.length.below(1);
+    });
+
+    it('Should ignore parse a KML with more than one type of geometry and return only geometries inside the array passed', function() {
+
+        var parsed = KMLParser.loadKML(kmlString[1], ['Polygon', 'Point']);
+        var index = parsed.head.indexOf('geojson');
+
+        var geometry = _.chain(parsed.body)
+                            .map(function(geo) {
+                                return JSON.parse(geo[index]);
+                            })
+                            .filter(function(point) {
+                                return ['Polygon', 'Point'].indexOf(point.type) > -1;
+                            })
+                            .value();
+
+        expect(geometry).to.have.length.above(0);
+    });
+
 });
