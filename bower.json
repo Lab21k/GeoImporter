@@ -1,23 +1,27 @@
 {
-  "name": "Importador",
-  "version": "0.0.1",
-  "authors": [
-    "André Abadesso <andre.abadesso@gmail.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "app/bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "~2.1.4",
-    "jszip": "Stuk/jszip#~2.5.0",
-    "lodash": "~3.9.3",
-    "mocha": "~2.2.5",
-    "chai": "~3.0.0"
-  }
+    "name": "GeomImporter",
+    "version": "0.0.1",
+    "authors": [
+        "André Abadesso <andre@lab21k.com.br>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "app/bower_components",
+        "test",
+        "tests"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Lab21k/GeoImporter.git"
+    },
+    "dependencies": {
+        "jquery": "~2.1.4",
+        "jszip": "Stuk/jszip#~2.5.0",
+        "lodash": "~3.9.3",
+        "mocha": "~2.2.5",
+        "chai": "~3.0.0"
+    }
 }
